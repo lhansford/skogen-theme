@@ -1,0 +1,119 @@
+{
+	"name": "Skogen",
+	"type": "dark",
+	"colors": {
+		"editor.background": "#141410",
+		"editor.foreground": "#A1A1A3",
+		"activityBarBadge.background": "#FF8445",
+		"sideBarTitle.foreground": "#D0D0D2"
+	},
+	"tokenColors": [
+		{
+			"name": "Comment",
+			"scope": [
+				"comment",
+				"punctuation.definition.comment"
+			],
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#323C43"
+			}
+		},
+		{
+			"name": "YAML keys",
+			"scope": [
+				"entity.name.tag.yaml",
+				"text.html.markdown",
+				"punctuation.definition.heading.markdown",
+				"punctuation.definition.metadata.markdown",
+				"punctuation.definition.list.begin.markdown",
+				"punctuation.definition.string.begin.markdown",
+				"punctuation.definition.string.end.markdown",
+				"entity.name.function.ts"
+			],
+			"settings": {
+				"foreground": "#A1A1A3"
+			}
+		},
+		{
+			"name": "TODO:",
+			"scope": [
+				"string.unquoted.plain.out.yaml",
+				"string.quoted.double.yaml",
+				"punctuation.definition.string.begin.yaml",
+				"punctuation.definition.string.end.yaml",
+				"string.quoted.double.json",
+				"punctuation.definition.string.begin.json",
+				"punctuation.definition.string.end.json",
+				"string.other.link.title.markdown",
+				"storage.type.ts",
+				"string.quoted.single.ts",
+				"punctuation.definition.string.begin.ts",
+				"punctuation.definition.string.end.ts",
+				"storage.type.function.arrow.ts",
+				"storage.type.interface.ts",
+				"storage.type.function.ts",
+				"string.template.ts"
+			],
+			"settings": {
+				"foreground": "#4E683E"
+			}
+		},
+		{
+			"name": "Operator, Misc",
+			"scope": [
+				"punctuation",
+				"meta.brace.round.ts"
+			],
+			"settings": {
+				"foreground": "#D0D0D2"
+			}
+		},
+		{
+			"name": "Orange",
+			"scope": [
+				"source.json meta.structure.dictionary.json support.type.property-name.json",
+				"punctuation.support.type.property-name.begin.json",
+				"punctuation.support.type.property-name.end.json",
+				"keyword.control",
+				"keyword.operator",
+				"storage.modifier.ts",
+			],
+			"settings": {
+				"foreground": "#D0883E"
+			}
+		},
+		{
+			"name": "Lighter green",
+			"scope": [
+				"variable",
+				"meta.enum.declaration.ts",
+			],
+			"settings": {
+				"foreground": "#7D9863"
+			}
+		},
+		{
+			"name": "TYPES DEFS",
+			"scope": [
+				"entity.name.type",
+				"entity.other.inherited-class.ts",
+				"meta.object-literal.key.ts",
+				"meta.object.member.ts"
+			],
+			"settings": {
+				"foreground": "#FFF7D0"
+			}
+		},
+		{
+			"name": "TYPES Primitives & errors",
+			"scope": [
+				"support.type.primitive.ts",
+				"support.class.error.ts"
+			],
+			"settings": {
+				"foreground": "#FF8445"
+			}
+		}
+	]
+}

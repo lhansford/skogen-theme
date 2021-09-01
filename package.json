@@ -1,0 +1,21 @@
+{
+  "name": "skogen",
+  "displayName": "Skogen",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.59.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Skogen",
+        "uiTheme": "vs-dark",
+        "path": "./themes/skogen-color-theme.json"
+      }
+    ]
+  }
+}
