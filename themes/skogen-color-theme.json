@@ -2,8 +2,8 @@
 	"name": "Skogen",
 	"type": "dark",
 	"colors": {
-		"editor.background": "#141410",
-		"editor.foreground": "#A1A1A3",
+		"editor.background": "#2a2a26",
+		"editor.foreground": "#f200fa",
 		"activityBarBadge.background": "#FF8445",
 		"sideBarTitle.foreground": "#D0D0D2"
 	},
@@ -16,20 +16,22 @@
 			],
 			"settings": {
 				"fontStyle": "italic",
-				"foreground": "#323C43"
+				"foreground": "#515b62"
 			}
 		},
 		{
 			"name": "YAML keys",
 			"scope": [
-				"entity.name.tag.yaml",
-				"text.html.markdown",
+				"constant",
+				"entity.name.function",
+				"entity.name.tag.tsx",
+				"entity.name.tag",
 				"punctuation.definition.heading.markdown",
-				"punctuation.definition.metadata.markdown",
 				"punctuation.definition.list.begin.markdown",
-				"punctuation.definition.string.begin.markdown",
-				"punctuation.definition.string.end.markdown",
-				"entity.name.function.ts"
+				"punctuation.definition.markdown",
+				"punctuation.definition.metadata.markdown",
+				"punctuation.definition.raw.markdown",
+				"text.html.markdown",
 			],
 			"settings": {
 				"foreground": "#A1A1A3"
@@ -38,32 +40,34 @@
 		{
 			"name": "TODO:",
 			"scope": [
-				"string.unquoted.plain.out.yaml",
-				"string.quoted.double.yaml",
-				"punctuation.definition.string.begin.yaml",
-				"punctuation.definition.string.end.yaml",
-				"string.quoted.double.json",
-				"punctuation.definition.string.begin.json",
-				"punctuation.definition.string.end.json",
-				"string.other.link.title.markdown",
-				"storage.type.ts",
-				"string.quoted.single.ts",
-				"punctuation.definition.string.begin.ts",
-				"punctuation.definition.string.end.ts",
-				"storage.type.function.arrow.ts",
-				"storage.type.interface.ts",
-				"storage.type.function.ts",
-				"string.template.ts"
+				"entity.other.attribute-name.class.css",
+				"punctuation.definition.string.begin",
+				"punctuation.definition.string.end",
+				"storage.type",
+				"string.other",
+				"string.quoted",
+				"string.template",
+				"string.unquoted",
 			],
 			"settings": {
 				"foreground": "#4E683E"
 			}
 		},
 		{
+			"name": "Number",
+			"scope": [
+				"constant.numeric",
+			],
+			"settings": {
+				"foreground": "#ff7a7a"
+			}
+		},
+		{
 			"name": "Operator, Misc",
 			"scope": [
+				"meta.brace",
+				"meta.jsx.children.tsx",
 				"punctuation",
-				"meta.brace.round.ts"
 			],
 			"settings": {
 				"foreground": "#D0D0D2"
@@ -72,12 +76,13 @@
 		{
 			"name": "Orange",
 			"scope": [
-				"source.json meta.structure.dictionary.json support.type.property-name.json",
-				"punctuation.support.type.property-name.begin.json",
-				"punctuation.support.type.property-name.end.json",
 				"keyword.control",
 				"keyword.operator",
-				"storage.modifier.ts",
+				"keyword.other.unit",
+				"punctuation.support.type.property-name",
+				"source.json meta.structure.dictionary.json support.type.property-name.json",
+				"storage.modifier",
+				"punctuation.definition.keyword"
 			],
 			"settings": {
 				"foreground": "#D0883E"
@@ -86,8 +91,11 @@
 		{
 			"name": "Lighter green",
 			"scope": [
-				"variable",
+				"constant.other.timestamp",
 				"meta.enum.declaration.ts",
+				"meta.tag.attributes.tsx",
+				"punctuation.definition.variable",
+				"variable",
 			],
 			"settings": {
 				"foreground": "#7D9863"
@@ -97,19 +105,25 @@
 			"name": "TYPES DEFS",
 			"scope": [
 				"entity.name.type",
-				"entity.other.inherited-class.ts",
-				"meta.object-literal.key.ts",
-				"meta.object.member.ts"
+				"entity.other.inherited-class",
+				"meta.object-literal.key",
+				"meta.object.member",
+				"source.ignore",
 			],
 			"settings": {
 				"foreground": "#FFF7D0"
 			}
 		},
 		{
-			"name": "TYPES Primitives & errors",
+			"name": "TYPES Primitives & errors & JSX",
 			"scope": [
-				"support.type.primitive.ts",
-				"support.class.error.ts"
+				"support.class.component.tsx",
+				"support.class.error.ts",
+				"support.constant.property-value",
+				"support.type.object.module",
+				"support.type.primitive",
+				"support.type.property-name",
+				"support.function",
 			],
 			"settings": {
 				"foreground": "#FF8445"
