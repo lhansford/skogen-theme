@@ -18,7 +18,7 @@
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR=''
+SEGMENT_SEPARATOR='▓▒░'
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -95,8 +95,7 @@ build_prompt() {
 PROMPT='%{%f%b%k%}$(build_prompt) '
 
 # PROMPT="╭─$fg_bold[green]%n@$fg_bold[green]$(box_name)%{$reset_color%}─$fg_bold[yellow]%B%~%b${git_info}${ruby_env}
-PROMPT='$(build_prompt)
- ╰─○%{$reset_color%} '
+PROMPT='$(build_prompt)%{$reset_color%} '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
