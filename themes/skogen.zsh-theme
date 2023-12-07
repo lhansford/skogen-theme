@@ -85,9 +85,16 @@ prompt_dir() {
   prompt_segment blue black '%3~'
 }
 
+prompt_env() {
+  if [ -f ".nvmrc" ]; then
+    prompt_segment red black $(node -v)
+  fi
+}
+
 build_prompt() {
   prompt_context
   prompt_dir
+  prompt_env
   prompt_git
   prompt_end
 }
