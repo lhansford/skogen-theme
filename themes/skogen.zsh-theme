@@ -57,12 +57,6 @@ prompt_context() {
   prompt_segment black default "%n@%m"
 }
 
-function virtualenv_prompt_info {
-  [[ -n ${VIRTUAL_ENV} ]] || return
-  echo "${ZSH_THEME_VIRTUALENV_PREFIX:=[}${VIRTUAL_ENV:t}${ZSH_THEME_VIRTUALENV_SUFFIX:=]}"
-}
-
-local ruby_env='$(ruby_prompt_info)'
 local git_info='$(git_prompt_info)'
 
 # Git: branch/detached head, dirty status
@@ -86,7 +80,8 @@ prompt_dir() {
 }
 
 prompt_env() {
-  if [ -f ".nvmrc" ]; then
+  if [ -f ".tool-versions" ]; then
+    # TODO: Read file any get back actaul language
     prompt_segment red black $(node -v)
   fi
 }
@@ -110,6 +105,3 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_RUBY_PROMPT_PREFIX=" ${FG[239]}using${FG[243]} ‹"
 ZSH_THEME_RUBY_PROMPT_SUFFIX="›%{$reset_color%}"
 
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-ZSH_THEME_VIRTUALENV_PREFIX=" ${FG[239]}using${FG[243]} «"
-ZSH_THEME_VIRTUALENV_SUFFIX="»%{$reset_color%}"
