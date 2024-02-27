@@ -23,7 +23,7 @@ SEGMENT_SEPARATOR=''
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
 # rendering default background/foreground.
-prompt_segment() {
+function prompt_segment() {
   local bg fg
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
   [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
@@ -39,7 +39,7 @@ prompt_segment() {
 }
 
 # End the prompt, closing any open segments
-prompt_end() {
+function prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
     echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
   else
@@ -53,14 +53,12 @@ prompt_end() {
 # Each component will draw itself, and hide itself if no information needs to be shown
 
 # Context: user@hostname (who am I and where am I)
-prompt_context() {
+function prompt_context() {
   prompt_segment black default "%n@%m"
 }
 
-local git_info='$(git_prompt_info)'
-
 # Git: branch/detached head, dirty status
-prompt_git() {
+function prompt_git() {
   local ref dirty
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
     dirty=$(parse_git_dirty)
@@ -75,7 +73,7 @@ prompt_git() {
 }
 
 # Dir: current working directory
-prompt_dir() {
+function prompt_dir() {
   prompt_segment blue black '%3~'
 }
 
@@ -83,10 +81,12 @@ prompt_env() {
   if [ -f ".tool-versions" ]; then
     # TODO: Read file any get back actaul language
     prompt_segment red black $(node -v)
+  elif [ -f ".ruby-version" ]; then
+    prompt_segment red black $(ruby -v) # TODO: Split this to get actual number
   fi
 }
 
-build_prompt() {
+function build_prompt() {
   prompt_context
   prompt_dir
   prompt_env
@@ -94,9 +94,6 @@ build_prompt() {
   prompt_end
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
-
-# PROMPT="╭─$fg_bold[green]%n@$fg_bold[green]$(box_name)%{$reset_color%}─$fg_bold[yellow]%B%~%b${git_info}${ruby_env}
 PROMPT='$(build_prompt)%{$reset_color%} '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$reset_color%} "
